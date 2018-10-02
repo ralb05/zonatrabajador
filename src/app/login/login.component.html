@@ -1,0 +1,63 @@
+<div class="login-body">
+  <div class="card login-panel ui-fluid">
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <img src="../../assets/layout/images/logo-big-blue.png" width="200px">
+      </div>
+      <form (ngSubmit)="f.valid && signIn()" #f="ngForm" novalidate>
+        <div class="ui-g-12">
+                        <span class="md-inputfield">
+                            <input type="text" autocomplete="off" class=" ui-inputtext ui-corner-all ui-state-default ui-widget "
+                                   id="username" name="username" required
+                                   [(ngModel)]="fieldUserName"
+                                   #userI="ngModel"
+                                   [ngClass]="{'ui-state-filled': userI.dirty,
+                                   'ng-dirty ng-invalid': f.submitted && !userI.valid}">
+                            <label>No. de Cédula</label>
+                          <div *ngIf="f.submitted && !userI.valid" class="ui-message ui-messages-error ui-corner-all">
+                            Campo es Requerido
+                          </div>
+                        </span>
+        </div>
+        <div class="ui-g-12">
+                      <span class="md-inputfield">
+                          <input type="date" autocomplete="off" class="ui-state-filled ui-inputtext ui-corner-all ui-state-default ui-widget"
+                                 id="pass" name="pass" required
+                                 [(ngModel)]="fieldPassword"
+                                 #passI="ngModel"
+                                 [ngClass]="{'ng-dirty ng-invalid': f.submitted && !passI.valid}">
+                          <label>Fecha de Expediciónß</label>
+                        <div *ngIf="f.submitted && !passI.valid" class="ui-message ui-messages-error ui-corner-all">
+                            Campo es Requerido
+                          </div>
+                      </span>
+          {{fieldPassword}}
+                      <!--<span class="md-inputfield">
+                          <input type="password" autocomplete="off" class="ui-inputtext ui-corner-all ui-state-default ui-widget"
+                                 id="pass" name="pass" required
+                                 [(ngModel)]="fieldPassword"
+                                 #passI="ngModel"
+                                 [ngClass]="{'ui-state-filled': passI.dirty,
+                                 'ng-dirty ng-invalid': f.submitted && !passI.valid}">
+                          <label>Password</label>
+                        <div *ngIf="f.submitted && !passI.valid" class="ui-message ui-messages-error ui-corner-all">
+                            Campo es Requerido
+                          </div>
+                      </span>-->
+        </div>
+        <div class="ui-g-12">
+          <button type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left">
+            <span class="ui-button-icon-left ui-c fa fa-fw ui-icon-person"></span>
+            <span class="ui-button-text ui-c">Sign In</span>
+          </button>
+          <!--<button type="button" class="secondary ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left">
+            <span class="ui-button-icon-left ui-c fa fa-fw ui-icon-help"></span>
+            <span class="ui-button-text ui-c">Forgot Password</span>
+          </button>-->
+        </div>
+      </form>
+    </div>
+  
+  </div>
+</div>
+<p-growl [value]="msgs" sticky="sticky"></p-growl>

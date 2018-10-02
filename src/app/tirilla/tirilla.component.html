@@ -1,0 +1,21 @@
+<div class="ui-g">
+  <div class="ui-g-12">
+    <div class="card card-w-title">
+      <h1>Soportes de pago</h1>
+      <p-table  dataKey="label"
+                [value]="data" [paginator]="true" [rows]="10" [responsive]="true">
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="label">Periodo<p-sortIcon field="label"></p-sortIcon></th>
+            <th style="width: 120px;">Acción</th></tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-data>
+          <tr>
+            <td>{{ data.label }}</td>
+            <td><button type="button" icon="ui-icon-visibility" (click)="showDetail(data.id)" pButton></button></td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

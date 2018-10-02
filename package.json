@@ -21,6 +21,8 @@
         "@angular/platform-browser": "6.1.1",
         "@angular/platform-browser-dynamic": "6.1.1",
         "@angular/router": "6.1.1",
+        "@ngx-translate/core": "^10.0.2",
+        "@ngx-translate/http-loader": "^3.0.1",
         "chart.js": "2.7.1",
         "core-js": "2.5.7",
         "fullcalendar": "4.0.0-alpha",
@@ -30,8 +32,8 @@
         "primeng": "6.1.2",
         "quill": "1.1.8",
         "rxjs": "6.2.2",
-        "zone.js": "0.8.26",
-        "web-animations-js": "2.3.1"
+        "web-animations-js": "2.3.1",
+        "zone.js": "0.8.26"
     },
     "devDependencies": {
         "@angular/compiler-cli": "6.1.1",
