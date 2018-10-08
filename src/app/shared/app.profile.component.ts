@@ -6,7 +6,8 @@ import {AppMainComponent} from './app-main/app-main.component';
     selector: 'app-inline-profile',
     template: `
         <div class="profile" [ngClass]="{'profile-expanded':active}">
-                <img class="profile-image" src="assets/layout/images/avatar1.png" />
+                <!--<img class="profile-image" src="assets/layout/images/avatar1.png" />-->
+                <i class="material-icons" style="font-size: 24px">face</i><br>
                 <span class="profile-name">{{ name }}</span>
         </div>
 

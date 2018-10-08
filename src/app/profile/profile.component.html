@@ -1,0 +1,76 @@
+<div class="ui-g ui-fluid">
+  <div class="ui-g-12">
+    <div class="card card-w-title">
+      <form (ngSubmit)="f.valid && save()" #f="ngForm" novalidate >
+        <h1>Datos basicos</h1>
+        <div class="ui-g form-group">
+          <ng-template ngFor let-item  [ngForOf]="basicos">
+            <div class="ui-g-12 ui-md-4">
+              <span class="md-inputfield" *ngIf="item.id === 'asodepartamentodomicilio' && departamentos">
+                  <p-dropdown [options]="departamentos" [(ngModel)]="item.value" [autoWidth]="false"
+                              [id]="item.id" [name]="item.id"
+                              filter="true"
+                              class="ui-state-filled"></p-dropdown>
+                  <label>{{item.label}}</label>
+              </span>
+              <span class="md-inputfield" *ngIf="item.id === 'asociudaddomicilio' && ciudades">
+                  <p-dropdown [options]="ciudades" [(ngModel)]="item.value" [autoWidth]="false"
+                              [id]="item.id" [name]="item.id"
+                              filter="true"
+                              class="ui-state-filled"></p-dropdown>
+                  <label>{{item.label}}</label>
+              </span>
+              <span class="md-inputfield" *ngIf="item.id === 'asotipodesangre' && tipossangre">
+                  <p-dropdown [options]="tipossangre" [(ngModel)]="item.value" [autoWidth]="false"
+                              [id]="item.id" [name]="item.id"
+                              filter="true"
+                              class="ui-state-filled"></p-dropdown>
+                  <label>{{item.label}}</label>
+              </span>
+              <span class="md-inputfield" *ngIf="item.id === 'asogenero' && genero">
+                  <p-dropdown [options]="genero" [(ngModel)]="item.value" [autoWidth]="false"
+                              [id]="item.id" [name]="item.id"
+                              filter="true"
+                              class="ui-state-filled"></p-dropdown>
+                  <label>{{item.label}}</label>
+              </span>
+              <span class="md-inputfield"
+                    *ngIf="item.id !== 'asotipodesangre' && item.id !== 'asociudaddomicilio' && item.id !== 'asodepartamentodomicilio' && item.id !== 'asogenero'">
+                <input type="text" pInputText
+                       [id]="item.id" [name]="item.id"
+                       [(ngModel)]="item.value"
+                       class="ui-state-filled"
+                >
+                <label>{{item.label}}</label>
+              </span>
+            </div>
+          </ng-template>
+        </div>
+        <h1>Datos de Contacto</h1>
+        <div class="ui-g form-group">
+          <ng-template ngFor let-item  [ngForOf]="contacto">
+            <div class="ui-g-12 ui-md-6">
+                        <span class="md-inputfield">
+                            <input type="text" pInputText
+                                   [id]="item.id" [name]="item.id"
+                                   [(ngModel)]="item.value"
+                            >
+                            <label>{{item.label}}</label>
+                        </span>
+            </div>
+          </ng-template>
+        </div>
+        <div class="ui-g form-group">
+        <div class="ui-g-12 ui-md-4"></div>
+        <div class="ui-g-12 ui-md-4">
+          <button pButton type="submit" label="Actualizar"
+                  icon="ui-icon-save"
+                  iconPos="right"></button>
+        </div>
+        <div class="ui-g-12 ui-md-4"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<p-growl [(value)]="msgs"></p-growl>

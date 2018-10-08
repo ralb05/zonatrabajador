@@ -9,8 +9,8 @@ import {Message} from 'primeng/primeng';
               styleUrls: ['./login.component.css']
             } )
 export class LoginComponent implements OnInit {
-  fieldUserName = '1098653134';
-  fieldPassword = '2006-06-07';
+  fieldUserName = '';
+  fieldPassword = '';
   msgs: Array<Message> = [];
 
   constructor(private authenticationService: AuthenticationService,

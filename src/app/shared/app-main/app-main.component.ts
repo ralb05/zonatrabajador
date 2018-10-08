@@ -1,5 +1,6 @@
 import {Component, AfterViewInit, ElementRef, Renderer2, ViewChild, OnDestroy, OnInit, NgZone} from '@angular/core';
 import { ScrollPanel} from 'primeng/primeng';
+import {Router} from '@angular/router';
 
 enum MenuOrientation {
   STATIC,
@@ -13,7 +14,7 @@ enum MenuOrientation {
   templateUrl: './app-main.component.html',
   styleUrls: ['./app-main.component.css']
 })
-export class AppMainComponent implements OnInit, AfterViewInit, OnDestroy, OnInit {
+export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
   layoutCompact = false;
 
@@ -59,7 +60,7 @@ export class AppMainComponent implements OnInit, AfterViewInit, OnDestroy, OnIni
 
   rippleMouseDownListener: any;
 
-  constructor(public renderer2: Renderer2, public zone: NgZone) {}
+  constructor(public renderer2: Renderer2, public zone: NgZone, private router: Router) {}
 
   ngOnInit() {
     this.zone.runOutsideAngular(() => {this.bindRipple(); });
@@ -304,6 +305,12 @@ export class AppMainComponent implements OnInit, AfterViewInit, OnDestroy, OnIni
 
   changeToSlimMenu() {
     this.layoutMode = MenuOrientation.SLIM;
+  }
+
+  logout(event) {
+    event.preventDefault();
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
   ngOnDestroy() {

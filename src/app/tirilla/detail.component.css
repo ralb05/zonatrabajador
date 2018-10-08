@@ -1,0 +1,3 @@
+.dashboard .activity-list li:first-child {
+  border-top: 0;
+}

@@ -13,6 +13,9 @@ import {AppMainComponent} from './app-main/app-main.component';
                 <a id="menu-button" href="#" (click)="app.onMenuButtonClick($event)">
                     <i></i>
                 </a>
+                <a id="rightpanel-menu-button" href="#" (click)="app.logout($event)">
+                    <i class="material-icons">power_settings_new</i>
+                </a>
 <!--
                 <a id="rightpanel-menu-button" href="#" (click)="app.onRightPanelButtonClick($event)">
                     <i class="material-icons">more_vert</i>

@@ -1,0 +1,27 @@
+.ui-dataview-layout-options .ui-button {
+  margin-left: .5em;
+}
+.ui-dataview .filter-container {
+  text-align: center;
+}
+
+@media (max-width: 40em) {
+  .ui-dataview .car-details, .ui-dataview .search-icon{
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .ui-dataview .filter-container {
+    text-align: left;
+  }
+  .ui-dataview-layout-options.ui-buttonset > .ui-button {
+    margin-left: 0;
+    display: inline-block;
+  }
+  .ui-dataview-layout-options.ui-buttonset > .ui-button:first-child {
+    border-radius: 50%;
+  }
+  .ui-dataview-layout-options.ui-buttonset > .ui-button:last-child {
+    border-radius: 50%;
+  }
+}

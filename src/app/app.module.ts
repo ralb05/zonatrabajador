@@ -19,6 +19,14 @@ import {BreadcrumbService} from './shared/breadcrumb.service';
 import {AppMainComponent} from './shared/app-main/app-main.component';
 import { TirillaComponent } from './tirilla/tirilla.component';
 import {DetailComponent} from './tirilla/detail.component';
+import {PrimasComponent} from './primas/listar.component';
+import {CesantiasComponent} from './cesantias/listar.component';
+import {VacacionesComponent} from './vacaciones/listar.component';
+import {CesantiasdetailComponent} from './cesantias/detail.component';
+import {VacacionesdetailComponent} from './vacaciones/detail.component';
+import {PrimasdetailComponent} from './primas/detail.component';
+import {ProfileComponent} from './profile/profile.component';
+import {AuthGuard} from './_services/auth.guard.service';
 
 @NgModule({
     imports: [
@@ -41,11 +49,19 @@ import {DetailComponent} from './tirilla/detail.component';
         AppRightpanelComponent,
         AppInlineProfileComponent,
         TirillaComponent,
-        DetailComponent
+        DetailComponent,
+        CesantiasComponent,
+        CesantiasdetailComponent,
+        VacacionesComponent,
+        VacacionesdetailComponent,
+        PrimasComponent,
+        PrimasdetailComponent,
+        ProfileComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
-        BreadcrumbService
+        BreadcrumbService,
+        AuthGuard
     ],
     bootstrap: [AppComponent]
 })
